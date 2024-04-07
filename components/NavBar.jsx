@@ -4,7 +4,7 @@ import styles from './NavBar.module.css'
 
 const NavBar = () => {
     return (
-        <nav className={`fixed top-0 w-full flex items-center justify-between bg-black text-white py-4 px-8 z-50 ${styles.navFont}`}>
+        <nav className={`fixed top-0 w-full flex items-center justify-between bg-black text-white py-4 px-8 z-50 ${styles.navFont}`} style={{height: '150px'}} >
             <div className="logo font-bold">
                 <Image src='/assets/vica-logo-nobackground.png' width={120} height={100} alt='vica logo' />
             </div>

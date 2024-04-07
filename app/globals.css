@@ -2,4 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
+nav {
+  margin-bottom: 100px;
+}
