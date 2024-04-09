@@ -40,7 +40,7 @@ const NavBar = () => {
           Tech PM
         </a>
         <a href="#saas" className={`hover:text-gray-400 transition-colors duration-150 ${styles.navItem}`}>
-          SaaS
+          Apps
         </a>
       </div>
     </nav>
