@@ -1,7 +1,14 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 
 const HeroSection = () => {
+  // State to manage modal visibility
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  // Function to toggle modal state
+  const toggleModal = () => setModalOpen(!isModalOpen);
+
   return (
     <>
       <div className="relative w-full overflow-hidden" style={{ height: "calc(100vh - 130px)" }}>
@@ -16,16 +23,30 @@ const HeroSection = () => {
             </h1>
             <h3 className="text-white mb-4">- Arthur C. Clarke</h3>
             <div className="mt-12"></div>
-            <a
-              href="#"
+            <button
+              onClick={toggleModal}
               className="bg-white text-black text-xl px-12 py-3 rounded-lg hover:bg-black hover:text-white transition-colors duration-300 ease-in-out"
             >
               Get Started
-            </a>
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Modal Component covering the full viewport */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
+          <div className="bg-white p-8 rounded-lg shadow-lg text-center w-3/4 max-w-4xl">
+            <h2 className="font-bold text-xl mb-4">For tecnical project management click <a href="#" style={{color: 'gray'}}>here</a>.</h2>
+            <p className="mb-4">The rest of the page is under construction</p>
+            <button onClick={toggleModal} className="px-6 py-2 rounded bg-black text-white hover:bg-gray-900">
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 };
+
 export default HeroSection;
